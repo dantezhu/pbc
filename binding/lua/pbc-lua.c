@@ -9,9 +9,7 @@ extern "C" {
 #endif
 
 // modify begin by dantezhu
-#if defined(_WIN32) || (defined(CC_TARGET_PLATFORM) && CC_TARGET_PLATFORM==CC_PLATFORM_WIN32)
-#include <malloc.h>
-#else
+#if !defined(_WIN32) && !(defined(CC_TARGET_PLATFORM) && CC_TARGET_PLATFORM==CC_PLATFORM_WIN32)
 #include <sys/malloc.h>
 #endif
 // modify end
